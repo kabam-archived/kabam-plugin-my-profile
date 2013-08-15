@@ -1,0 +1,42 @@
+{
+  "name": "mwc_plugin_my_profile",
+  "version": "0.0.1",
+  "description": "MWC core plugin to edit my profile",
+  "main": "index.js",
+  "directories": {
+    "example": "example"
+  },
+  "scripts": {
+    "start": "node example/example.js",
+    "test": "./node_modules/.bin/mocha --reporter spec"
+  },
+  "engines": {
+    "node": "0.10.x",
+    "npm": "1.3.x"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/mywebclass/mwc_plugin_my_profile.git"
+  },
+  "keywords": [
+    "mwc",
+    "mwc_core",
+    "hogan",
+    "mustache",
+    "render",
+    "template",
+    "partial",
+    "layout"
+  ],
+  "author": "Anatolij Ostroumov",
+  "dependencies": {
+
+  },
+  "devDependencies": {
+    "mwc_kernel": "git+https://github.com/mywebclass/mwc_kernel.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mywebclass/mwc_plugin_my_profile/issues"
+  }
+}
