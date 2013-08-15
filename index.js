@@ -7,7 +7,14 @@ exports.routes = function(mwc){
         if (request.is('json')) {
           response.json(request.user)
         } else {
-          response.render('my',{title:'Edit your profile'});
+          var parameters = {
+            'title': 'Edit your profile',
+            'useGoogle': true,
+            'useGithub': (mwc.config.passport && mwc.config.passport.GITHUB_CLIENT_ID && mwc.config.passport.GITHUB_CLIENT_SECRET),
+            'useTwitter': (mwc.config.passport && mwc.config.passport.TWITTER_CONSUMER_KEY && mwc.config.passport.TWITTER_CONSUMER_SECRET),
+            'useFacebook': (mwc.config.passport && mwc.config.passport.FACEBOOK_APP_ID && mwc.config.passport.FACEBOOK_APP_SECRET)
+          };
+          response.render('my',parameters);
         }
     } else {
       response.send(400);
