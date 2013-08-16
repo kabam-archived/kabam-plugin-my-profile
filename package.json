@@ -6,10 +6,6 @@
   "directories": {
     "example": "example"
   },
-  "scripts": {
-    "start": "node example/example.js",
-    "test": "./node_modules/.bin/mocha --reporter spec"
-  },
   "engines": {
     "node": "0.10.x",
     "npm": "1.3.x"
@@ -20,21 +16,13 @@
   },
   "keywords": [
     "mwc",
-    "mwc_core",
-    "hogan",
-    "mustache",
-    "render",
-    "template",
-    "partial",
-    "layout"
+    "mwc_kernel",
+    "my",
+    "profile"
   ],
   "author": "Anatolij Ostroumov",
-  "dependencies": {
-
-  },
-  "devDependencies": {
-    "mwc_kernel": "git+https://github.com/mywebclass/mwc_kernel.git"
-  },
+  "dependencies": {},
+  "devDependencies": {},
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/mywebclass/mwc_plugin_my_profile/issues"
