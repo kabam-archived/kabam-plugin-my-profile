@@ -1,5 +1,5 @@
-mwc_plugin_hogan_express
+kabam-plugin-my-profile
 ========================
 
-[MWC core](https://github.com/mywebclass/mwc_core) plugin to edit user profile
+[Kabam-kernel](https://github.com/mykabam/kabam-kernel) plugin to edit user profile
 

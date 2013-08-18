@@ -1,7 +1,7 @@
 {
-  "name": "mwc_plugin_my_profile",
+  "name": "kabam-plugin-my-profile",
   "version": "0.0.1",
-  "description": "MWC core plugin to edit my profile",
+  "description": "Kabam plugin to edit profile of current user",
   "main": "index.js",
   "directories": {
     "example": "example"
@@ -12,7 +12,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git://github.com/mywebclass/mwc_plugin_my_profile.git"
+    "url": "git://github.com/mykabam/kabam-plugin-my-profile.git"
   },
   "keywords": [
     "mwc",
@@ -25,6 +25,6 @@
   "devDependencies": {},
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/mywebclass/mwc_plugin_my_profile/issues"
+    "url": "https://github.com/mykabam/kabam-plugin-my-profile/issues"
   }
 }
