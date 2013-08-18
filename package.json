@@ -24,6 +24,32 @@
   "dependencies": {},
   "devDependencies": {},
   "license": "MIT",
+  "contributors": [
+    {
+      "name": "Keith Williams (copyright owner)",
+      "url": "http://mywebclass.org",
+      "email": "keith@mywebclass.org"
+    },
+    {
+      "name": "Anatolij Ostroumov (responsible developer)",
+      "url": "https://github.com/vodolaz095",
+      "email": "ostroumov095@gmail.com"
+    },
+    {
+      "name": "The Budiman (developer)",
+      "url": "https://github.com/valmy",
+      "email": "tbudiman@gmail.com"
+    },
+    {
+      "name": "Alexander Petrovich (developer)",
+      "url": "https://github.com/chopachom"
+    },
+    {
+      "name": "Muhammad Ghazali (developer)",
+      "url": "https://github.com/muhammadghazali",
+      "email": "muhammadghazali2480@gmail.com"
+    }
+  ],
   "bugs": {
     "url": "https://github.com/mykabam/kabam-plugin-my-profile/issues"
   }
