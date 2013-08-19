@@ -1,0 +1,105 @@
+[[#myself]]
+<div class="span4">
+    <img src="[[gravatar]]" alt="Your gravatar" title="Your gravatar" class="img-polaroid"/>
+    <p>You can change your gravatar <a href="http://gravatar.com/emails/" target="_blank">here</a></p>
+</div>
+<div class="span6">
+    <form action="/auth/myProfile" method="post">
+        <input type="hidden" name="_csrf" value="[[csrf]]">
+
+        <table class="table table-striped table-bordered table-hover">
+            <tbody>
+            <tr>
+                <th>Login</th>
+                <td>[[username]]</td>
+            </tr>
+            <tr>
+                <th>Email address</th>
+                <td>[[email]]
+                    [[#emailVerified]]<span class="label label-success">Verified</span>[[/emailVerified]]
+                    [[^emailVerified]]<span class="label label-warning">Not verified</span>[[/emailVerified]]
+                </td>
+            </tr>
+            <tr>
+                <th><label for="firstName"><b>First name</b></label></th>
+                <td><input type="text" id="firstName" value="[[firstName]]" name="firstName" placeholder="John"/></td>
+            </tr>
+            <tr>
+                <th><label for="lastName"><b>Last name</b></label></th>
+                <td><input type="text" id="lastName" value="[[lastName]]" name="lastName" placeholder="Doe"/></td>
+            </tr>
+            <tr>
+                <th><label for="skype"><b>Skype</b></label></th>
+                <td><input type="text" value="[[skype]]" name="skype" id="skype" placeholder="JohnDoe"/></td>
+            </tr>
+            <tr>
+                <th><label for="pwd1"><b>Set new password</b></label></th>
+                <td>
+                    <input id="pwd1" type="password" name="password1"/>
+                </td>
+            </tr>
+            <tr>
+                <th><label for="pwd2"><b>Retype new password</b></label></th>
+                <td><input id="pwd2" type="password" name="password2"/></td>
+            </tr>
+            <tr>
+                <th>Roles</th>
+                <td>[[roles]]</td>
+            </tr>
+            <tr>
+                <th>Authorization providers</th>
+                <td>
+                    [[#useGithub]]
+                    [[#keychain.github]]<p>Github profile attached - #[[keychain.github]]</p>[[/keychain.github]]
+                    [[^keychain.github]]<p><a href="/auth/github">Attach Github profile</a></p>[[/keychain.github]]
+                    [[/useGithub]]
+
+                    [[#useTwitter]]
+                    [[#keychain.twitter]]<p>Twitter profile attached - #[[keychain.twitter]]</p>[[/keychain.twitter]]
+                    [[^keychain.twitter]]<p><a href="/auth/twitter">Attach Twitter profile</a></p>[[/keychain.twitter]]
+                    [[/useTwitter]]
+
+                    [[#useFacebook]]
+                    [[#keychain.facebook]]<p>Facebook profile attached - #[[keychain.facebook]]</p>[[/keychain.facebook]]
+                    [[^keychain.facebook]]<p><a href="/auth/facebook">Attach Facebook profile</a></p>[[/keychain.facebook]]
+                    [[/useFacebook]]
+                </td>
+            </tr>
+            <tr>
+                <td>
+
+                </td>
+                <td>
+                    <input type="submit" value="Save"  class="btn btn-success"/>
+                    <input type="reset" value="Cancel" class="btn btn-danger"/>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </form>
+</div>
+<script type="text/javascript">
+    var p1 = $('#pwd1'),
+      p2 = $('#pwd2');
+    $('input[type=password]').bind('change click keyup',function(){
+        if(p1.val() || p2.val()){
+            if(p1.val() === p2.val()){
+                p1.parent().parent().removeClass('error');
+                p2.parent().parent().removeClass('error');
+                p1.parent().parent().addClass('success');
+                p2.parent().parent().addClass('success');
+            } else {
+                p1.parent().parent().addClass('error');
+                p2.parent().parent().addClass('error');
+                p1.parent().parent().removeClass('success');
+                p2.parent().parent().removeClass('success');
+            }
+        } else {
+            p1.parent().parent().removeClass('error');
+            p2.parent().parent().removeClass('error');
+            p1.parent().parent().removeClass('success');
+            p2.parent().parent().removeClass('success');
+        }
+    });
+</script>
+[[/myself]]
