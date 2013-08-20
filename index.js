@@ -16,7 +16,7 @@ exports.routes = function(mwc){
             'useTwitter': (mwc.config.passport && mwc.config.passport.TWITTER_CONSUMER_KEY && mwc.config.passport.TWITTER_CONSUMER_SECRET),
             'useFacebook': (mwc.config.passport && mwc.config.passport.FACEBOOK_APP_ID && mwc.config.passport.FACEBOOK_APP_SECRET)
           };
-          response.render('my',parameters);
+          response.render('editMyProfile/editMyProfile',parameters);
         }
     } else {
       response.send(400);
