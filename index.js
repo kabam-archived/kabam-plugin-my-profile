@@ -1,7 +1,4 @@
 var fs = require('fs');
-/*
-todo - on first run - create templates for profile...
- */
 
 exports.routes = function(mwc){
   mwc.app.get('/auth/myProfile',function(request,response){
