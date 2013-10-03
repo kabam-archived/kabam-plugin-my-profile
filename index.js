@@ -27,7 +27,7 @@ exports.routes = function(mwc){
           if(err){
             response.send(400);
           } else {
-            response.send(201);
+            response.json(200, request.user.export());
           }
         } else {
           if(err){
