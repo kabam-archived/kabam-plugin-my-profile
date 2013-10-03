@@ -20,6 +20,7 @@ exports.routes = function(mwc){
     }
   });
 
+  // NOTE(chopachom) don't now if we still need this code
   mwc.app.post('/auth/myProfile',function(request,response){
     if(request.user){
       var makeResponse = function (err){
@@ -54,5 +55,31 @@ exports.routes = function(mwc){
     } else {
       response.send(400);
     }
+  });
+
+  mwc.app.post('/auth/profile',function(request,response){
+    if(!request.user) return response.send(401);
+
+    var fields =['firstName', 'lastName', 'skype'];
+    fields.map(function(p){
+      if(request.body[p]){
+        request.user[p]=request.body[p];
+      }
+    });
+
+
+    // password change: if we have a new password we should verify old first
+    if(request.body.newPassword){
+      if(request.user.verifyPassword(request.body.password)){
+        request.user.setPassword(request.body.newPassword);
+      } else {
+        return response.json(400, {errors: {password: 'Incorrect password'}})
+      }
+    }
+
+    request.user.save(function(err){
+      if(err) return response.json(400, {errors: err.message});
+      response.json(200, request.user.export());
+    });
   });
 };
